@@ -66,12 +66,17 @@ main {
 }
 
 #social-link.facebook {
-  background-image: linear-gradient(#4267B2, #fff);
+  background-color: #fff;
 }
 
 #social-link.instagram {
-  background-image: linear-gradient(#4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75);
+  background-color: #fff;
 }
+
+#social-link.tik-tok {
+  background-color: #fff;
+}
+
 
 form {
     display: flex;
@@ -82,6 +87,7 @@ form {
 
 label {
     margin-top: 10px;
+    font-size: larger;
 }
 
 input, textarea {
