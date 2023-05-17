@@ -22,9 +22,7 @@ body {
 header {
   background-color: #2ecc71;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   background-image: url(lawn.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -41,6 +39,8 @@ header {
 main {
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .lawn {
@@ -52,36 +52,25 @@ main {
   opacity: 0.9;
 }
 
-.social-container {
-  display: block;
-}
-
 #social-link {
+  display: flex;
+  flex-direction: column;
   background-color: #f1f1f1;
   text-decoration: none;
+  color: #333;
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  font-size: bold;
 }
 
-/* Floating social media icons styles */
-.float-icon {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  margin-left: 0.5rem;
-  border-radius: 50%;
-  overflow: hidden;
+#social-link.facebook {
+  background-image: linear-gradient(blue, white);
 }
 
-.facebook {
-  background-color: #1877f2;
-}
-
-.instagram {
-  background-color: #e1306c;
-}
-
-.float-icon img {
-  width: 100%;
-  height: auto;
+#social-link.instagram {
+  background-image: linear-gradient(pink, yellow);
 }
 
 form {
