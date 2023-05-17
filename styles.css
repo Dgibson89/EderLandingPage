@@ -52,6 +52,15 @@ main {
   opacity: 0.9;
 }
 
+.social-container {
+  display: block;
+}
+
+#social-link {
+  background-color: #f1f1f1;
+  text-decoration: none;
+}
+
 /* Floating social media icons styles */
 .float-icon {
   display: inline-block;
