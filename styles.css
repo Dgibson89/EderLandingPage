@@ -57,37 +57,40 @@ main {
   opacity: 0.9;
 } */
 
+#social-container {
+  padding: 30px;
+}
+
 #social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
   background-color: #f1f1f1;
   text-decoration: none;
   color: #333;
   padding: 10px 20px 10px 20px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 15px;
   font-size: bold;
   border: #ff8200 2px solid;
-  max-width: 600px;
 }
 
 #social-link.facebook {
   background-color: #fff;
   margin-top: 50px;
   text-shadow: 1px 1px 1px #ff8200;
+  padding: 15px 100px;
 }
 
 #social-link.instagram {
   background-color: #fff;
   text-shadow: 1px 1px 1px #ff8200;
+  padding: 15px 100px;
 }
 
 #social-link.tik-tok {
   background-color: #fff;
   text-shadow: 1px 1px 1px #ff8200;
+  padding: 15px 110px;
 }
 
 /* 
