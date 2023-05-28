@@ -14,7 +14,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh; 
+  height: 100vh;
 }
 
 /* Header section styles */
@@ -29,7 +29,9 @@ header {
   background-attachment: fixed;
 }
 
-title, h1, h2 {
+title,
+h1,
+h2 {
   text-shadow: 1px 1px 10px #ff8200;
 }
 
