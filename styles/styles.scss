@@ -5,7 +5,12 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: max(300px, 1fr);
+  grid-template-columns: max(400px, 1fr);
+  grid-template-areas: 
+  "header header header header"
+  "......... h1 h1 ........"
+  "social1 . . social2"
+  "social3 . . social4";
   grid-gap: 20px;
   padding: 2rem;
   text-align: center;
@@ -15,6 +20,11 @@ header {
   background-color: #000000;
   padding: 1rem;
   text-align: center;
+  grid-area: header;
+}
+
+h1 {
+    grid-area: h1;
 }
 
 .logo {
@@ -27,14 +37,13 @@ header {
 #social-link {
   text-align: center;
   max-width: 500px;
+  max-height: 50px;
   background-color: #f1f1f1;
   text-decoration: none;
   color: #333;
   padding: 10px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 15px;
   font-weight: bold;
   border: #ff8200 2px solid;
@@ -45,24 +54,28 @@ header {
   margin-top: 50px;
   text-shadow: 1px 1px 1px #ff8200;
   padding: 15px 110px;
+  grid-area: social1;
 }
 
 #social-link.instagram {
   background-color: #fff;
   text-shadow: 1px 1px 1px #ff8200;
   padding: 15px 110px;
+  grid-area: social2;
 }
 
 #social-link.tik-tok {
   background-color: #fff;
   text-shadow: 1px 1px 1px #ff8200;
   padding: 15px 120px;
+  grid-area: social3;
 }
 #social-link.myspace {
-    background-color: #fff;
-    text-shadow: 1px 1px 1px #ff8200;
-    padding: 15px 120px;
-  }
+  background-color: #fff;
+  text-shadow: 1px 1px 1px #ff8200;
+  padding: 15px 120px;
+  grid-area: social4;
+}
 
 /* Additional styling */
 body {
@@ -86,3 +99,89 @@ footer {
   background-size: cover;
   background-attachment: fixed;
 }
+
+// @media screen and (max-width: 768px) {
+//   .grid-container {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     grid-gap: 20px;
+//     padding: 2rem;
+//     text-align: center;
+//   }
+
+//   header {
+//     background-color: #000000;
+//     padding: 1rem;
+//     text-align: center;
+//   }
+
+//   .logo {
+//     width: 200px;
+//     border-radius: 50%;
+//     margin-top: 20px;
+//     border: #ff8200 2px solid;
+//   }
+
+//   #social-link {
+//     text-align: center;
+//     max-width: 500px;
+//     background-color: #f1f1f1;
+//     text-decoration: none;
+//     color: #333;
+//     padding: 10px 20px;
+//     margin-top: 20px;
+//     margin-bottom: 20px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     border-radius: 15px;
+//     font-weight: bold;
+//     border: #ff8200 2px solid;
+//   }
+
+//   #social-link.facebook {
+//     background-color: #fff;
+//     margin-top: 50px;
+//     text-shadow: 1px 1px 1px #ff8200;
+//     padding: 15px 110px;
+//   }
+
+//   #social-link.instagram {
+//     background-color: #fff;
+//     text-shadow: 1px 1px 1px #ff8200;
+//     padding: 15px 110px;
+//   }
+
+//   #social-link.tik-tok {
+//     background-color: #fff;
+//     text-shadow: 1px 1px 1px #ff8200;
+//     padding: 15px 120px;
+//   }
+//   #social-link.myspace {
+//     background-color: #fff;
+//     text-shadow: 1px 1px 1px #ff8200;
+//     padding: 15px 120px;
+//   }
+
+//   /* Additional styling */
+//   body {
+//     font-family: Arial, sans-serif;
+//     margin: 0;
+//     padding: 0;
+//     background-image: url(/imgs/lawn.jpg);
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-attachment: fixed;
+//   }
+
+//   footer {
+//     padding: 1rem;
+//     background-color: #f5f5f5;
+//     text-align: center;
+//     background-image: url(/imgs/lawn.jpg);
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-attachment: fixed;
+//   }
+// }
