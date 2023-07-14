@@ -71,7 +71,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   border: #ff8200 2px solid;
-} 
+}
 
 /* Additional styling */
 body {
@@ -105,11 +105,11 @@ footer {
   }
 
   .grid-container > * {
-    grid-column: span 2;
+    grid-column: span 6;
   }
 
   #social-link {
-    max-width: 300px;
+    max-width: 400px;
   }
 
   .logo {

@@ -105,10 +105,10 @@ footer {
     justify-items: center;
   }
   .grid-container > * {
-    grid-column: span 2;
+    grid-column: span 6;
   }
   #social-link {
-    max-width: 300px;
+    max-width: 400px;
   }
   .logo {
     grid-column: span 6;
