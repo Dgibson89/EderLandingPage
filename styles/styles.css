@@ -142,7 +142,7 @@ textarea {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1200;
   background: rgba(13, 13, 13, 0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 140, 0, 0.15);
@@ -220,6 +220,11 @@ textarea {
   background: transparent;
   border: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+  position: relative;
+  z-index: 1100;
 }
 
 .nav-toggle span {
@@ -298,8 +303,7 @@ textarea {
    Services
 ========================= */
 .services {
-  background:
-    linear-gradient(to bottom, #111111, #161616);
+  background: linear-gradient(to bottom, #111111, #161616);
 }
 
 .services-grid {
@@ -413,8 +417,7 @@ textarea {
    Gallery
 ========================= */
 .gallery {
-  background:
-    linear-gradient(to bottom, #131313, #1b1b1b);
+  background: linear-gradient(to bottom, #131313, #1b1b1b);
 }
 
 .gallery-grid {
@@ -490,24 +493,36 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 1rem 0 1.5rem;
+  margin: 1rem 0 1.75rem;
 }
 
-.social-links a {
+.social-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 140px;
+  gap: 0.6rem;
+  min-width: 150px;
   padding: 0.85rem 1.2rem;
-  border: 2px solid var(--color-accent);
   border-radius: 999px;
+  border: 2px solid var(--color-accent);
+  background: rgba(255, 140, 0, 0.05);
   color: var(--color-text);
+  font-weight: 600;
   transition: var(--transition);
 }
 
-.social-links a:hover {
+.social-btn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.social-btn:hover {
   background-color: var(--color-accent);
   color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 140, 0, 0.22);
 }
 
 .contact-actions {
@@ -532,128 +547,6 @@ textarea {
 .footer-content p {
   color: #b8b8b8;
   font-size: 0.95rem;
-}
-
-/* =========================
-   Responsive
-========================= */
-@media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-content,
-  .contact-grid,
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-image {
-    min-height: 320px;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 84px;
-    right: 5%;
-    width: min(260px, 90vw);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.25rem;
-    background: rgba(20, 20, 20, 0.98);
-    border: 1px solid rgba(255, 140, 0, 0.25);
-    border-radius: 16px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: var(--transition);
-  }
-
-  .nav-menu.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 0;
-  }
-
-  .navbar {
-    min-height: 78px;
-  }
-
-  .hero {
-    min-height: calc(100vh - 78px);
-    background-position: center;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons,
-  .contact-actions,
-  .social-links {
-    justify-content: center;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-item img {
-    height: 260px;
-  }
-
-  .logo-text {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    width: min(92%, var(--container-width));
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .logo-text {
-    max-width: 140px;
-    line-height: 1.2;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .contact-card {
-    padding: 1.5rem;
-  }
-
-  .gallery-item img {
-    height: 220px;
-  }
 }
 
 /* =========================
@@ -742,4 +635,143 @@ textarea {
   line-height: 1;
   display: grid;
   place-items: center;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-content,
+  .contact-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 320px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 84px;
+    right: 5%;
+    width: min(260px, 90vw);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(20, 20, 20, 0.98);
+    border: 1px solid rgba(255, 140, 0, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    z-index: 1050;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  .navbar {
+    min-height: 78px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 78px);
+    background-position: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons,
+  .contact-actions,
+  .social-links {
+    justify-content: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 260px;
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .parallax-divider {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(92%, var(--container-width));
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-text {
+    max-width: 140px;
+    line-height: 1.2;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-buttons,
+  .social-links,
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .social-links,
+  .contact-actions {
+    align-items: stretch;
+  }
+
+  .social-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .gallery-item img {
+    height: 220px;
+  }
 }
