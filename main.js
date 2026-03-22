@@ -2,23 +2,31 @@ const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-menu a");
 const sections = document.querySelectorAll("main section[id]");
+const hero = document.querySelector(".hero");
+const heroContent = document.querySelector(".parallax-content");
+const parallaxDivider = document.querySelector(".parallax-divider");
+const parallaxText = document.querySelector(".parallax-text");
 
 // Mobile nav toggle
 if (navToggle && navMenu) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navMenu.classList.toggle("active");
-    navToggle.setAttribute("aria-expanded", isOpen);
+  navToggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
+    const isOpen = navMenu.classList.toggle("active");
     navToggle.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
   });
 }
 
 // Close mobile menu when a nav link is clicked
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    navToggle.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
+    if (navMenu && navToggle) {
+      navMenu.classList.remove("active");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
   });
 });
 
@@ -27,10 +35,13 @@ const updateActiveLink = () => {
   let currentSection = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
+    const sectionTop = section.offsetTop - 140;
     const sectionHeight = section.offsetHeight;
 
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -43,9 +54,6 @@ const updateActiveLink = () => {
     }
   });
 };
-
-window.addEventListener("scroll", updateActiveLink);
-window.addEventListener("load", updateActiveLink);
 
 // Reveal on scroll
 const revealElements = document.querySelectorAll(
@@ -115,3 +123,55 @@ if (galleryItems.length > 0) {
     }
   });
 }
+
+// Parallax effect
+const handleParallax = () => {
+  const scrollY = window.scrollY;
+  const isDesktop = window.innerWidth > 768;
+
+  if (hero && isDesktop) {
+    hero.style.backgroundPosition = `center ${scrollY * 0.35}px`;
+  } else if (hero) {
+    hero.style.backgroundPosition = "center center";
+  }
+
+  if (heroContent && isDesktop) {
+    heroContent.style.transform = `translateY(${scrollY * 0.18}px)`;
+  } else if (heroContent) {
+    heroContent.style.transform = "translateY(0)";
+  }
+
+  if (parallaxDivider) {
+    const dividerTop = parallaxDivider.offsetTop;
+    const dividerOffset = (scrollY - dividerTop) * 0.2;
+
+    if (isDesktop) {
+      parallaxDivider.style.backgroundPosition = `center ${dividerOffset}px`;
+    } else {
+      parallaxDivider.style.backgroundPosition = "center center";
+    }
+  }
+
+  if (parallaxText) {
+    const dividerTop = parallaxDivider.offsetTop;
+    const textOffset = (scrollY - dividerTop) * 0.12;
+
+    if (isDesktop) {
+      parallaxText.style.transform = `translateY(${textOffset}px)`;
+    } else {
+      parallaxText.style.transform = "translateY(0)";
+    }
+  }
+};
+
+window.addEventListener("scroll", () => {
+  updateActiveLink();
+  handleParallax();
+});
+
+window.addEventListener("load", () => {
+  updateActiveLink();
+  handleParallax();
+});
+
+window.addEventListener("resize", handleParallax);

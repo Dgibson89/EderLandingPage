@@ -242,6 +242,7 @@ textarea {
   position: relative;
   min-height: calc(100vh - 84px);
   display: flex;
+  will-change: background-position;
   align-items: center;
   background-image: url("../imgs/lawn.jpg");
   background-size: cover;
@@ -270,6 +271,7 @@ textarea {
 .hero-content {
   padding: 5rem 0;
   max-width: 760px;
+  will-change: transform;
 }
 
 .hero-tagline {
@@ -383,12 +385,14 @@ textarea {
   position: relative;
   min-height: 50vh;
   display: flex;
+  overflow: hidden;
+  will-change: background-position;
   align-items: center;
   justify-content: center;
   background-image: url("../imgs/images1.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .parallax-divider::before {
@@ -400,6 +404,8 @@ textarea {
 
 .parallax-overlay {
   position: relative;
+  will-change: transform;
+  transition: transform 0.1s linear;
   z-index: 1;
   width: min(90%, 900px);
   text-align: center;
