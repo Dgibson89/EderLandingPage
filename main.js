@@ -3,9 +3,6 @@ const navMenu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-menu a");
 const sections = document.querySelectorAll("main section[id]");
 
-console.log("main.js loaded");
-alert("main.js loaded");
-
 // Mobile nav toggle
 if (navToggle && navMenu) {
   navToggle.addEventListener("click", () => {
