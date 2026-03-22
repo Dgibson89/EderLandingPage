@@ -1,57 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Official Lawn Care Co</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Official Lawn Care Co.</title>
+    <meta
+      name="description"
+      content="Professional lawn care services with reliable maintenance, clean cuts, and a consistent approach to keeping your yard looking its best."
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
-    <header>
-      <!-- Company Logo -->
-      <img src="imgs/logo.jpg" alt="Official Lawn Care Co Logo" class="logo" />
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <nav class="navbar container">
+        <a href="#hero" class="logo-link">
+          <img
+            src="./imgs/logo.jpg"
+            alt="Official Lawn Care Co. logo"
+            class="logo"
+          />
+          <span class="logo-text">Official Lawn Care Co.</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main class="grid-container">
-      <h1>A green lawn <br />is a beautiful lawn</h1>
-      <a
-        id="social-link"
-        class="facebook"
-        href="https://m.facebook.com/people/Offic-Lawncare-Co/100089015297900/"
-        target="_blank"
-        >Facebook</a
-      >
-      <a
-        id="social-link"
-        class="instagram"
-        href="https://instagram.com/officiallawncareco"
-        target="_blank"
-        >Instagram</a
-      >
-      <a
-        id="social-link"
-        class="tik-tok"
-        href="https://www.tiktok.com/@officiallawncareco?_t=8c0eab1eMRP&_r=1"
-        target="_blank"
-        >Tik Tok</a
-      >
-      <a
-        id="social-link"
-        class="myspace"
-        href="https://m.facebook.com/people/Offic-Lawncare-Co/100089015297900/"
-        target="_blank"
-        >MySpace</a
-      >
-<div>
-      <img src="/imgs/images1.jpg" alt="A beautiful lawn" class="lawn" />
-      <img src="/imgs/images2.jpg" alt="A beautiful lawn" class="lawn" />
-</div>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content container">
+          <p class="hero-tagline">A green lawn is a beautiful lawn</p>
+          <h1>A Healthy Lawn Starts With Consistent Care</h1>
+          <p class="hero-description">
+            Professional lawn care that helps your property look clean,
+            welcoming, and well-maintained all season long.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-tag">What We Do</p>
+            <h2>Reliable Lawn Care Services</h2>
+            <p>
+              We help keep your yard looking sharp with dependable service and
+              attention to detail.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <h3>Lawn Mowing</h3>
+              <p>
+                Clean, even mowing that keeps your lawn healthy, neat, and
+                professionally maintained.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Edging & Trimming</h3>
+              <p>
+                Crisp edges and detailed trimming to give your yard a polished,
+                finished look.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Yard Cleanup</h3>
+              <p>
+                Removal of leaves, debris, and overgrowth to keep outdoor spaces
+                looking fresh and inviting.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <h3>Seasonal Maintenance</h3>
+              <p>
+                Ongoing care tailored to the season so your property stays in
+                top shape year-round.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about section" id="about">
+        <div class="container about-content">
+          <div class="about-text">
+            <p class="section-tag">About Us</p>
+            <h2>Built on Consistency, Quality, and Care</h2>
+            <p>
+              At Official Lawn Care Co., the goal is simple: deliver dependable
+              lawn care that makes a difference you can see. From routine cuts
+              to detail-focused maintenance, every visit is handled with pride
+              and professionalism.
+            </p>
+            <p>
+              We believe a well-kept lawn adds value to your home, improves curb
+              appeal, and gives you an outdoor space you can feel good about.
+            </p>
+          </div>
+
+          <div class="about-image-wrapper">
+            <img
+              src="./imgs/images2.jpg"
+              alt="Lawn mower on a healthy green lawn"
+              class="about-image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Parallax Divider -->
+      <section class="parallax-divider" aria-hidden="true">
+        <div class="parallax-overlay">
+          <p>Consistent care. Clean results. A lawn you can be proud of.</p>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="gallery section" id="gallery">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-tag">Our Work</p>
+            <h2>Lawn Care in Action</h2>
+            <p>
+              A look at the clean, healthy, and well-kept results that consistent
+              lawn care can provide.
+            </p>
+          </div>
+
+          <div class="gallery-grid">
+            <button class="gallery-item" type="button">
+              <img src="./imgs/images1.jpg" alt="Freshly cut lawn close-up" />
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="./imgs/images2.jpg" alt="Lawn mower on a bright green lawn" />
+            </button>
+
+            <button class="gallery-item" type="button">
+              <img src="./imgs/lawn.jpg" alt="Dew-covered green grass in a field" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-tag">Get In Touch</p>
+            <h2>Ready for a Better Looking Lawn?</h2>
+            <p>
+              Reach out today to ask questions, request a quote, or connect on
+              social media.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3>Contact Information</h3>
+              <p><strong>Phone:</strong> (123) 456-7890</p>
+              <p><strong>Email:</strong> officiallawncare@email.com</p>
+              <p><strong>Hours:</strong> Mon - Sat | 8:00 AM - 6:00 PM</p>
+            </div>
+
+            <div class="contact-card">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+              </div>
+
+              <div class="contact-actions">
+                <a href="tel:1234567890" class="btn btn-primary">Call Now</a>
+                <a
+                  href="mailto:officiallawncare@email.com"
+                  class="btn btn-secondary"
+                >
+                  Email Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Official Lawn Care Co. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
   </body>
 </html>
